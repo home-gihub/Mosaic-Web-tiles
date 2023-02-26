@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Time</title>
+        <script type="text/javascript">
+            function updateClock() {
+                var now = new Date();
+ 				var month   = now.getMonth();
+				var monthname = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"); 
+				var daycount= now.getDate();
+ 				var day     = now.getDay();
+				var dayname = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+ 				var elem = document.getElementById('bigicon');
+                elem.innerHTML = +daycount+ "<br>";
+				var elem2 = document.getElementById('month');
+				elem2.innerHTML = monthname[month];
+            }
+        </script>
+<style>
+body {
+	font-family:"Segoe WP Light", "Segoe UI Light";
+	color:#fff;
+	background: #d19318;
+	font-size:24px
+}
+
+#title{
+position:absolute; 
+bottom: 10px; 
+left: 10px; 
+font-size:16px;
+}
+#bigicon{
+	position:absolute;
+	top: 10px;
+	left: 10px;
+	width: 100px;
+	font-size:90px;
+}
+#month{
+	font-size:16px;
+	text-transform:uppercase;
+	position:absolute;
+	top: 110px;
+	left: 10px;
+	width: 100px;
+	
+}
+#content{
+	position:absolute;
+	left:125px;
+	top:20px;
+}
+#today{
+	font-size:36px;
+	font-family:"Segoe WP Light", "Segoe UI Light";
+	color:#fff;
+}
+#forecast{
+	font-size:18px;
+	font-family:"Segoe WP Light", "Segoe UI Light";
+	color:#fff;
+}
+</style>
+</head>
+<body scroll="no" onload="updateClock()">
+<div id="bigicon"></div>
+<div id="month"></div>
+
+<div id="title">Today</div></body>
+</html>
